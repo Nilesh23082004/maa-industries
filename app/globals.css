@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+:root {
+  --graphite: #f8fafc;
+  --graphite-2: #ffffff;
+  --steel: #e2e8f0;
+  --steel-soft: #f1f5f9;
+  --paper: #ffffff;
+  --paper-2: #f8fafc;
+  --ink: #0f172a;
+  --pale: #334155;
+  --pale-dim: #64748b;
+  --beacon: #ff6a1a;
+  --beacon-dim: #ea580c;
+  --ready: #10b981;
+}
+
+@theme inline {
+  --color-graphite: var(--graphite);
+  --color-graphite-2: var(--graphite-2);
+  --color-steel: var(--steel);
+  --color-steel-soft: var(--steel-soft);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-pale: var(--pale);
+  --color-pale-dim: var(--pale-dim);
+  --color-beacon: var(--beacon);
+  --color-beacon-dim: var(--beacon-dim);
+  --color-ready: var(--ready);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-readout: var(--font-readout);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  background-color: var(--graphite);
+  color: var(--pale);
+  font-family: var(--font-body), sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), sans-serif;
+  color: var(--ink);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--graphite);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--beacon);
+}
+
+/* Core Utility Classes */
+.readout {
+  font-family: var(--font-display), var(--font-readout), sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "zero" 0;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  font-family: var(--font-readout), monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.beacon-dot {
+  background-color: var(--beacon);
+  box-shadow: 0 0 8px rgba(255, 106, 26, 0.5), 0 0 16px rgba(255, 106, 26, 0.25);
+}
+
+.ready-dot {
+  background-color: var(--ready);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5), 0 0 16px rgba(16, 185, 129, 0.25);
+}
+
+/* Glassmorphism & Modern SaaS Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.glass-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 106, 26, 0.4);
+  box-shadow: 0 12px 30px -10px rgba(255, 106, 26, 0.15);
+  transform: translateY(-2px);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-orange {
+  background: linear-gradient(135deg, #ff6a1a 0%, #ea580c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* SaaS Grid pattern overlay */
+.bg-tech-grid {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 106, 26, 0.12) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
