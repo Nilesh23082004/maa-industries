@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { company, navLinks } from "@/lib/content";
 import { ArrowUp, Phone, Mail, MapPin, ShieldCheck, ArrowUpRight } from "lucide-react";
+import Logo from "@/components/Logo";
+
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -40,11 +42,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-slate-200">
           {/* Col 1: Brand & Identity (4 Cols) */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="flex items-center gap-3">
-              <span className="w-3 h-3 rounded-full beacon-dot shrink-0" />
-              <span className="font-display font-bold text-2xl text-slate-900 tracking-tight">
-                {company.name}
-              </span>
+            <div className="mb-2">
+              <Logo variant="footer" />
             </div>
             <p className="text-slate-600 text-sm leading-relaxed max-w-sm">
               {company.tagline}. Dedicated heavy machine shop in Rakhial, Ahmedabad configured for single-setup shaft turning and heavy component machining.

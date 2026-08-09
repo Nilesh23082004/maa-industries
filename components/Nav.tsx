@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { company, navLinks } from "@/lib/content";
 import { Phone, ArrowUpRight, Menu, X, ShieldCheck } from "lucide-react";
+import Logo from "@/components/Logo";
+
 
 export default function Nav() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -69,26 +71,16 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Left Side: Brand Logo & Status Pill */}
+        {/* Left Side: Official Brand Logo */}
         <a
           href="#home"
           onClick={(e) => handleNavClick(e, "#home")}
-          className="flex items-center gap-3 group"
+          className="flex items-center group py-0.5"
+          aria-label="Maa Industries - Home"
         >
-          <div className="relative flex items-center justify-center">
-            <span className="w-3 h-3 rounded-full beacon-dot shrink-0 transition-transform group-hover:scale-125 duration-300" />
-            <span className="absolute w-5 h-5 rounded-full bg-beacon/20 animate-ping" />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-display font-bold text-base sm:text-xl tracking-tight text-slate-900 group-hover:text-beacon transition-colors leading-tight">
-              {company.name}
-            </span>
-            <span className="eyebrow text-[9px] sm:text-[10px] text-slate-500 flex items-center gap-1">
-              <ShieldCheck className="w-3 h-3 text-emerald-600 inline" />
-              Heavy CNC Machining
-            </span>
-          </div>
+          <Logo variant="header" />
         </a>
+
 
         {/* Center: Desktop Nav Links with Hover Indicator */}
         <nav className="hidden lg:flex items-center gap-1 bg-slate-100/90 p-1.5 rounded-full border border-slate-200/80 shadow-inner">
