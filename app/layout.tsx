@@ -22,6 +22,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://maaindustries.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  applicationName: "Maa Industries",
   title: {
     default: "Maa Industries | Heavy CNC Machining, Ahmedabad",
     template: "%s | Maa Industries",
@@ -92,6 +93,13 @@ export const metadata: Metadata = {
   },
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Maa Industries",
+  url: siteUrl,
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -146,6 +154,10 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} scroll-smooth antialiased`}
     >
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
