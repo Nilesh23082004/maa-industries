@@ -101,7 +101,7 @@ const jsonLd = {
   logo: `${siteUrl}/images/maa-logo-full.png`,
   description:
     "Heavy CNC machining, VMC turning, and precision shaft turning up to 600mm diameter and 6000mm length in Rakhial, Ahmedabad.",
-  telephone: company.phonePrimary,
+  telephone: company.phoneNumbers.map((p) => p.number),
   email: company.email,
   url: siteUrl,
   address: {

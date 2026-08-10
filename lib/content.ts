@@ -1,10 +1,15 @@
+export interface PhoneNumberItem {
+  label: string;
+  number: string;
+  whatsapp: string;
+}
+
 export interface CompanyInfo {
   name: string;
   tagline: string;
   city: string;
   addressLines: [string, string, string];
-  phonePrimary: string;
-  phoneWhatsapp: string;
+  phoneNumbers: PhoneNumberItem[];
   email: string;
   mapsQuery: string;
 }
@@ -52,8 +57,10 @@ export const company: CompanyInfo = {
     "Near Rakhial Cross Road, Rakhial",
     "Ahmedabad, Gujarat 380023, India",
   ],
-  phonePrimary: "+91 63532 28328",
-  phoneWhatsapp: "+91 63532 28328",
+  phoneNumbers: [
+    { label: "", number: "+91 70467 76226", whatsapp: "917046776226" },
+    { label: "", number: "+91 63532 28328", whatsapp: "916353228328" },
+  ],
   email: "maaindustriesss@gmail.com",
   mapsQuery: "Maa Industries, Rakhial Industrial Area, Rakhial, Ahmedabad, Gujarat 380023",
 };

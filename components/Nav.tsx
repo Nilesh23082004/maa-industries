@@ -110,15 +110,20 @@ export default function Nav() {
           })}
         </nav>
 
-        {/* Far Right: Phone Link & Get a Quote CTA */}
-        <div className="hidden lg:flex items-center gap-4">
-          <a
-            href={`tel:${company.phonePrimary.replace(/\s+/g, "")}`}
-            className="flex items-center gap-2 readout text-xs font-semibold text-slate-700 hover:text-beacon transition-colors px-3 py-2 rounded-lg border border-slate-200/60 bg-white shadow-xs"
-          >
-            <Phone className="w-3.5 h-3.5 text-beacon" />
-            {company.phonePrimary}
-          </a>
+        {/* Far Right: Phone Links & Get a Quote CTA */}
+        <div className="hidden lg:flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            {company.phoneNumbers.map((phone) => (
+              <a
+                key={phone.number}
+                href={`tel:${phone.number.replace(/\s+/g, "")}`}
+                className="flex items-center gap-1.5 readout text-xs font-semibold text-slate-700 hover:text-beacon transition-colors px-2.5 py-1.5 rounded-lg border border-slate-200/60 bg-white shadow-xs"
+              >
+                <Phone className="w-3.5 h-3.5 text-beacon" />
+                {phone.number}
+              </a>
+            ))}
+          </div>
 
           <motion.a
             whileHover={{ scale: 1.03 }}
@@ -174,14 +179,19 @@ export default function Nav() {
             </nav>
 
             {/* Mobile Call & Quick Action CTAs */}
-            <div className="pt-2 flex flex-col gap-3">
-              <a
-                href={`tel:${company.phonePrimary.replace(/\s+/g, "")}`}
-                className="readout text-sm text-slate-800 font-semibold text-center hover:text-beacon transition-colors py-3 px-4 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-center gap-2 active:bg-slate-100"
-              >
-                <Phone className="w-4 h-4 text-beacon" />
-                <span>Call {company.phonePrimary}</span>
-              </a>
+            <div className="pt-2 flex flex-col gap-2.5">
+              <div className="flex flex-col sm:flex-row gap-2">
+                {company.phoneNumbers.map((phone) => (
+                  <a
+                    key={phone.number}
+                    href={`tel:${phone.number.replace(/\s+/g, "")}`}
+                    className="flex-1 readout text-xs sm:text-sm text-slate-800 font-semibold text-center hover:text-beacon transition-colors py-2.5 px-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-center gap-2 active:bg-slate-100"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-beacon" />
+                    <span>Call {phone.number}</span>
+                  </a>
+                ))}
+              </div>
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, "#contact")}

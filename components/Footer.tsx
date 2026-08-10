@@ -112,11 +112,19 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 text-beacon shrink-0 mt-0.5" />
                 <span>{company.addressLines.join(", ")}</span>
               </div>
-              <div className="flex items-center gap-2 readout font-medium text-slate-800">
-                <Phone className="w-4 h-4 text-beacon shrink-0" />
-                <a href={`tel:${company.phonePrimary.replace(/\s+/g, "")}`} className="hover:text-beacon transition-colors">
-                  {company.phonePrimary}
-                </a>
+              <div className="flex items-start gap-2 readout font-medium text-slate-800">
+                <Phone className="w-4 h-4 text-beacon shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1">
+                  {company.phoneNumbers.map((phone) => (
+                    <a
+                      key={phone.number}
+                      href={`tel:${phone.number.replace(/\s+/g, "")}`}
+                      className="hover:text-beacon transition-colors block"
+                    >
+                      {phone.number}
+                    </a>
+                  ))}
+                </div>
               </div>
               <div className="flex items-center gap-2 readout font-medium text-slate-800 break-all">
                 <Mail className="w-4 h-4 text-beacon shrink-0" />
