@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { company, navLinks } from "@/lib/content";
-import { ArrowUp, Phone, Mail, MapPin, ShieldCheck, ArrowUpRight } from "lucide-react";
+import { company, navLinks, partners } from "@/lib/content";
+import { ArrowUp, Phone, Mail, MapPin, ShieldCheck, ArrowUpRight, Users } from "lucide-react";
 import Logo from "@/components/Logo";
 
 
@@ -48,6 +48,25 @@ export default function Footer() {
             <p className="text-slate-600 text-sm leading-relaxed max-w-sm">
               {company.tagline}. Dedicated heavy machine shop in Rakhial, Ahmedabad configured for single-setup shaft turning and heavy component machining.
             </p>
+
+            {/* Partners Summary Tag */}
+            <div className="pt-2">
+              <span className="eyebrow text-[10px] text-slate-500 font-bold block mb-1.5 flex items-center gap-1.5">
+                <Users className="w-3.5 h-3.5 text-beacon" />
+                Partners & Leadership
+              </span>
+              <div className="flex flex-wrap gap-1.5">
+                {partners.map((name) => (
+                  <span
+                    key={name}
+                    className="text-[11px] font-semibold text-slate-700 bg-white border border-slate-200 px-2.5 py-1 rounded-md shadow-2xs"
+                  >
+                    {name}
+                  </span>
+                ))}
+              </div>
+            </div>
+
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs shadow-xs">
               <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
               <span className="eyebrow text-[10px] text-slate-700 font-bold">

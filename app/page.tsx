@@ -5,6 +5,7 @@ import Products from "@/components/Products";
 import Facility from "@/components/Facility";
 import Gallery from "@/components/Gallery";
 import WhyUs from "@/components/WhyUs";
+import Partners from "@/components/Partners";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import EnquiryWidget from "@/components/EnquiryWidget";
@@ -20,6 +21,7 @@ export default function Home() {
         <Facility />
         <Gallery />
         <WhyUs />
+        <Partners />
         <Contact />
         <Footer />
       </main>

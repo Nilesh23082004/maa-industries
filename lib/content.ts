@@ -65,12 +65,19 @@ export const company: CompanyInfo = {
   mapsQuery: "Maa Industries, Rakhial Industrial Area, Rakhial, Ahmedabad, Gujarat 380023",
 };
 
+export const partners: string[] = [
+  "Parth Panchal",
+  "Radhikaben Kachiya",
+  "Yash Panchal",
+];
+
 export const navLinks: NavLink[] = [
   { label: "Capabilities", href: "#capabilities" },
   { label: "Products", href: "#products" },
   { label: "Facility", href: "#facility" },
   { label: "Gallery", href: "#gallery" },
   { label: "Why Us", href: "#why-us" },
+  { label: "Partners", href: "#partners" },
   { label: "Contact", href: "#contact" },
 ];
 
