@@ -58,8 +58,8 @@ export const company: CompanyInfo = {
     "Ahmedabad, Gujarat 380023, India",
   ],
   phoneNumbers: [
-    { label: "", number: "+91 70467 76226", whatsapp: "917046776226" },
     { label: "", number: "+91 63532 28328", whatsapp: "916353228328" },
+    { label: "", number: "+91 70467 76226", whatsapp: "917046776226" },
   ],
   email: "maaindustriesss@gmail.com",
   mapsQuery: "Maa Industries, Rakhial Industrial Area, Rakhial, Ahmedabad, Gujarat 380023",
