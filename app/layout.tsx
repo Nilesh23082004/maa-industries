@@ -18,7 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://www.maaindustries.com";
+const siteUrl = "https://www.maaindustriess.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
