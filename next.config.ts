@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
             value: 'maa-industries.vercel.app',
           },
         ],
-        destination: 'https://www.maaindustriess.com/:path*',
+        destination: 'https://www.maaindustries.com/:path*',
         permanent: true,
       },
     ];
