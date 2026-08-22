@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import StatsStrip from "@/components/StatsStrip";
 import Products from "@/components/Products";
 import Facility from "@/components/Facility";
+import FinalProducts from "@/components/FinalProducts";
 import Gallery from "@/components/Gallery";
 import WhyUs from "@/components/WhyUs";
 import Partners from "@/components/Partners";
@@ -19,6 +20,7 @@ export default function Home() {
         <StatsStrip />
         <Products />
         <Facility />
+        <FinalProducts />
         <Gallery />
         <WhyUs />
         <Partners />
