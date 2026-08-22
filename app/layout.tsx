@@ -18,10 +18,13 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://maaindustries.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.maaindustriess.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: '/',
+  },
   applicationName: "Maa Industries",
   title: {
     default: "Maa Industries | Heavy CNC Machining, Ahmedabad",
